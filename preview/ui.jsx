@@ -1162,7 +1162,7 @@ function useAsyncStatus() {
 
 function chainById(id) {
 	return {
-		name: `Chain ${id} (${id === 1 ? 'MAINNET' : ''})`,
+		name: `Chain #${id} ${id === 1 ? '(MAINNET)' : ''}`,
 		faucets: id !== 1,
 	}
 }

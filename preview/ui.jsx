@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react'
 import ReactDOM from 'react-dom'
 import * as ethers from 'ethers'
-import { getChainByChainId } from 'evm-chains'
 import styled from 'styled-components'
 import 'microtip/microtip.css'
 import { X, ChevronRight, Upload, Eye, Edit2, Play } from 'react-feather'
@@ -1162,13 +1161,9 @@ function useAsyncStatus() {
 }
 
 function chainById(id) {
-	try {
-		return getChainByChainId(id)
-	} catch (error) {
-		return {
-			name: `Chain ${id} (${id === 1 ? 'MAINNET' : ''})`,
-			faucets: id !== 1,
-		}
+	return {
+		name: `Chain ${id} (${id === 1 ? 'MAINNET' : ''})`,
+		faucets: id !== 1,
 	}
 }
 

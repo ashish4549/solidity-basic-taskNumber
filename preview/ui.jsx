@@ -414,10 +414,8 @@ export default function App() {
 	)
 }
 
-function FaucetLink({ chainId, walletAddress }) {
-	const { faucets } = chainById(chainId)
-	// console.log(faucets)
-	return faucets.length > 0 ? (
+function FaucetLink({ chainId }) {
+	return chainId !== 1 ? (
 		<a
 			target="_blank"
 			rel="noopener"

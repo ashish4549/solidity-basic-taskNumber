@@ -410,17 +410,6 @@ export default function App() {
 					</p>
 				</VStack>
 			)}
-
-			<p
-				style={{
-					color: 'var(--fg-dimmest)',
-					textAlign: 'center',
-					marginTop: '60px',
-					fontSize: '10px',
-				}}
-			>
-				Temporary UI credits: replit
-			</p>
 		</Wrapper>
 	)
 }

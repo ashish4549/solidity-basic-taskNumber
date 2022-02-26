@@ -30,8 +30,12 @@ async function init() {
 		if (noClean) {
 			cmd = 'yarn hardhat compile'
 		}
-		const output = execSync(cmd).toString()
-		return output
+        try {
+            const output = execSync(cmd).toString()
+            return output
+        } catch(error) {
+            console.log(`Error compiling contract: ${error.message}`)
+        }
 	}
 
 	function extractContractsBuildInfo() {

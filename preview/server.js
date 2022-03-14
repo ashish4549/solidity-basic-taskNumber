@@ -39,12 +39,16 @@ async function init() {
 	}
 
 	function extractContractsBuildInfo() {
-		const file = fs.readdirSync('artifacts/build-info')[0]
-		if (!file) return null
-		const output = JSON.parse(
+		try {
+		    const file = fs.readdirSync('artifacts/build-info')[0]
+		    if (!file) return null
+		    const output = JSON.parse(
 			fs.readFileSync(`artifacts/build-info/${file}`, 'utf8')
-		).output
-		return output
+		    ).output
+		    return output
+		} catch(error) {
+		    return null
+		}
 	}
 
 	const app = express()

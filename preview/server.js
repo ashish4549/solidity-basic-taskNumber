@@ -25,11 +25,8 @@ const deployedContracts = {
 }
 
 async function init() {
-	async function compile(noClean = false) {
-		let cmd = 'yarn hardhat clean && yarn hardhat compile'
-		if (noClean) {
-			cmd = 'yarn hardhat compile'
-		}
+	async function compile() {
+		let cmd = 'rm -rf artifacts/* && yarn hardhat compile'
         try {
             const output = execSync(cmd).toString()
             return output
@@ -67,7 +64,7 @@ async function init() {
 	})
 
 	app.get('/attempt-compile', async (req, res) => {
-		const out = await compile(true)
+		const out = await compile()
 		if (out === 'Nothing to compile') {
 			return res.json({ idle: true })
 		} else {

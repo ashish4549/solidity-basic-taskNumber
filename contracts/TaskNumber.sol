@@ -6,6 +6,7 @@ contract TaskNumber {
     
     //create function called setTask() with one input value when function call it will change the taskNumber value to new value
 
-    //create a function called getTask() that return current taskNumber
-    
+    function getTask() public view returns(uint){
+        return taskNumber;
+    }
 }

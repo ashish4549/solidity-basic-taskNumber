@@ -1,3 +1,2 @@
-terminal-one: yarn install && node preview/server.js
-live-reload-browser: false
-tabs: ['contracts/HelloWorld.sol']
+terminal-one: npm install hardhat
+tabs: ['contracts/TaskNumber.sol']
